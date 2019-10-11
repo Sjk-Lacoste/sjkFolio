@@ -39,54 +39,56 @@ a {
 /*********************************************************
     Navigation
 *********************************************************/
+#navbar {
+    
+}
 
-.navbar {
+#navbar #menu {
     position: fixed;
-    top: 0;
-    left: 0;
-    display: grid;
-    min-height: 4rem;
-    grid-auto-flow: column;
-    grid-gap: 20px;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     z-index: 999;
 }
 
-.navbar-transparent { background-color: var(--transparent); }
-.navbar-cloured { background-color: var(--primary-color); color: var(--white); }
+#navbar #menu ul {
+    
+}
+
+#navbar #menu li {
+    display: inline-block;
+    /* margin-right: 1px; */
+    transition: var(--overlay-color) 156ms ease-in; 
+}
+
+#navbar #menu li a {
+    display: block;
+    min-width: 4em;
+    /* height: 4rem; */
+    padding: .5em 1em;
+    text-align: center;
+    line-height: 3.123em;
+    color: var(--primary-color);
+    z-index: 999;
+}
+
+#menu li:hover a {
+    background-color: var(--bluish);
+    color: var(--white) !important;
+    border-top: 2px solid var(--primary-color);
+    opacity: .75;
+}
+
+.nav-transparent { background-color: var(--transparent); }
+.nav-coloured { background-color: var(--bluish); }
 
 .logo {
-    display: grid;
-    justify-content: start;
-    align-content: center;
+    display: inline;
     font-size: 2rem;
     grid-auto-flow: column;
     color: var(--white);
     font-weight: 700;
 }
 
-.logo span {
-    color: var(--primary-color);
-}
-
-.nav {
-    display: grid;
-    justify-content: end;
-    align-content: center;
-    grid-auto-flow: column;
-    grid-gap: 10px;
-    font-size: 1.2em;
-}
-
-.nav-link {
-    color: var(--primary-color);
-    transition: ease-in-out all 250ms;
-}
-
-.nav-link:hover, .nav-link:focus {
-    color: var(--grey);
-}
 
 /*********************************************************
     Hero Section

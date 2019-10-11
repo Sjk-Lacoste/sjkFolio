@@ -16,14 +16,14 @@ let time = setInterval(() => {
 }, 500);
 
 // Navigation
-var myNav = document.getElementsByClassName('navbar');
-window.onscroll = function () {
-    "use strict";
-    if (document.body.scrollTop >= 200) {
-        this.myNav.classList.add("nav-coloured");
-        this.myNav.classList.remove("nav-transparent");
+window.addEventListener('scroll', function (e) {
+    var myNav = document.getElementById('navbar');
+
+    if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
+        myNav.classList.add("nav-coloured");
+        myNav.classList.remove("nav-transparent");
     } else {
-        this.myNav.classList.add("nav-transparent");
-        this.myNav.classList.remove("nav-coloured");
+        myNav.classList.add("nav-transparent");
+        myNav.classList.remove("nav-coloured");
     }
-};
+});
