@@ -1,203 +1,404 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css?family=Railway:300,400,700,900');
+
 :root {
     --white: #fff;
     --primary-color: #ffd000;
     --bluish: #01020a;
+    --grey: #9b9b9b;
     --overlay-color: rgba(24,39,51,0.85);
     --bg-transparent: rgba(250,250,250,.008);
     --transparent: transparent;
 }
 
 body {
-    background: #cdcdcd;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-}
-
-img {
-    box-sizing: border-box;
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
+    background-color: #d3d3d3;
+    font-family: 'Railway', sans-serif;
+    text-align: center;
 }
 
 .container {
-    display: grid;
     width: 95%;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 3rem;
+    max-width: 60em;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.folio {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 /*********************************************************
     Typography
 *********************************************************/
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.5em;
+    margin-top: 1em;
+}
+
+.title .directory {
+    font-weight: 300;
+    display: block;
+    font-size: .9em;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 1.75rem;
+}
 
 /*********************************************************
-    Navigation
+    buttons
 *********************************************************/
-#navbar {
-    
-}
-
-#navbar #menu {
-    position: fixed;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    z-index: 999;
-}
-
-#navbar #menu ul {
-    
-}
-
-#navbar #menu li {
+.button {
     display: inline-block;
-    /* margin-right: 1px; */
-    transition: var(--overlay-color) 156ms ease-in; 
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: 2px;
+    border-style: solid;
+    padding: .5em 1.75em;
 }
 
-#navbar #menu li a {
-    display: block;
-    min-width: 4em;
-    /* height: 4rem; */
-    padding: .5em 1em;
-    text-align: center;
-    line-height: 3.123em;
+.button-primary {
     color: var(--primary-color);
-    z-index: 999;
+    border-color: var(--primary-color);
 }
 
-#menu li:hover a {
-    background-color: var(--bluish);
-    color: var(--white) !important;
-    border-top: 2px solid var(--primary-color);
+.button-primary:hover
+.button-primary:focus {
+    background: ;
     opacity: .75;
 }
-
-.nav-transparent { background-color: var(--transparent); }
-.nav-coloured { background-color: var(--bluish); }
-
-.logo {
-    display: inline;
-    font-size: 2rem;
-    grid-auto-flow: column;
-    color: var(--white);
-    font-weight: 700;
+/*********************************************************
+    Header
+*********************************************************/
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 1em;
+    z-index: 5;
 }
 
+header .logo {
+    height: 5em;
+}
+
+nav li {
+    display: inline-block;
+    margin: 1em .5em;
+}
+
+nav a {
+    font-weight: 900;
+    font-size: .8rem;
+    text-transform: uppercase;
+    padding: .75em;
+    color: var(--white);
+}
+
+nav a:hover, nav a:focus {
+    color: var(--primary-color);
+}
 
 /*********************************************************
     Hero Section
 *********************************************************/
-.hero {
-    background-color: var(--overlay-color);
-    color: var(--white);
+.home-hero {
+    background: var(--overlay-color);
+    width: 100%;
     height: 100vh;
+    padding: 10em 0;
+    color: var(--white);
     position: relative;
 }
 
-.hero::before {
+.home-hero::after {
     content: '';
-    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
+    background: url('../img/bg.jpg') no-repeat center center/cover;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-.hero .hero-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-}
-
-.hero h1 {
-    font-size: 3em;
-    font-weight: 700;
-}
-
-.hero h1 #my-name {
-    color: var(--primary-color);
-    font-weight: 300;
-}
-
-.directory {
-    display: flex;
-    flex: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: .5em;
-    font-size: .75em;
+.home-hero .title {
+    margin-bottom: 1em;
 }
 
 /*********************************************************
     About Section
 *********************************************************/
 .about {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: auto;
+     
 }
 
-/* .about:before {
-    content: '';
-    background: url('../img/tshepo.jpg') no-repeat center center/cover;
-}*/
-
-.about:after {
-    content: '';
-    overflow: hidden;
-    display: block;
-    height: 100%;
-    clear: both;
-}
-
-.about .box {
-    position: absolute;
-    background-color: var(--bluish);
+.about-textbox {
+    background-color: #232323;
+    padding: 4em;
+    width: 100vw;
+    margin-left: -2.5%;
     color: var(--white);
-    width: 35rem;
-    top: -5em;
-    padding: 3em;
     outline: 2px solid var(--primary-color);
-    outline-offset: -2em;
-}
-/*
-.about .box h2 {
-    width: 10rem;
-    text-align: center;
+    outline-offset: -2.5em;
     position: relative;
-    top: -2.8rem;
-    left: 35%;
-    right: 60%;
-    background-color: var(--bluish);
-    font-size: 1.5em;
-    font-weight: 700;
-    padding: 1rem .75rem;
 }
-*/
-.about .box p {
-    display: block;
-    width: 100%;
-    font-size: 1em;
-    padding: .25em .75em;
-    line-height: 1.4;
+
+.about-textbox .section-header {
+    color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .85em;
+    background: #232323;
+    padding: 0 .75em;
+}
+
+.about-textbox p {
+    padding-bottom: 1em;
+}
+
+.about-textbox p:last-of-type {
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 60em) {
+    .section-header {
+        font-size: 2rem;
+    }
+
+    .about {
+        background-image: url('../img/tshepo.jpg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: bottom;
+        margin-left: 5em;
+    }
+
+    .about-textbox {
+        width: 45%;
+        text-align: left;
+        top: -5em;
+        box-shadow: 0 0 3em 0 rgba(0,0,0,.5);
+        padding-top: 4.5em;
+    }
+
+    .about-textbox .section-header {
+        top: .7em;
+        left: 2.9rem;
+        padding: 0 .6em;
+        transform: translateX(0);
+    }
 }
 
 /*********************************************************
     Skill Section
 *********************************************************/
 .skills {
-    margin-top: 45rem;
+    display: block;
+    padding: 3em;
+    color: #232323;
+}
+
+.skills .section-header {
+    width: 30%;
+    margin: 0 auto;
+    padding: .5em;
+    margin-bottom: .75em;
+    font-size: 3em;
+    font-weight: 900;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.skills-wrapper .skills-item {
+    padding: 2em;
+}
+
+.skill {
+    margin-top: 2rem;
+}
+
+.skill span {
+    margin-top: 2em;
+    padding: 1.75em;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    opacity: .5;
+}
+
+/*********************************************************
+    Projects Section
+*********************************************************/
+.portfolio {
+    padding: 4em 0;
+    background-color: #232323;
+    color: var(--white);
+}
+
+.portfolio .section-header {
+    width: 30%;
+    margin: 0 auto;
+    padding: .5em;
+    margin-bottom: .75em;
+    font-size: 3em;
+    font-weight: 900;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.porfolio-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.porfolio-items .item {
+    max-height: 20em;
+}
+
+.porfolio-items .item img {
+    box-sizing: border-box;
+}
+
+/*********************************************************
+    Contact Section
+*********************************************************/
+.contact {
+    padding: 3em;
+}
+
+.contact .section-header {
+    width: 30%;
+    margin: 0 auto;
+    padding: .5em;
+    margin-bottom: .5em;
+    font-size: 3em;
+    font-weight: 900;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.contact .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1.5em;
+    padding: 2em 0;
+    text-align: left;
+    color: var(--bluish);
+}
+
+.contact .wrapper .contact-details {
+    border-right: 2px solid var(--grey);
+}
+
+.contact .wrapper .contact-details .details{
+    margin-top: 1em;
+}
+
+span.icon img {
+    width: 2.5em;
+    padding: .5em;
+}
+
+.address {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.address p {
+    margin-top: .85em;
+}
+
+.phone {
+    display: flex;
+    vertical-align: center;
+}
+
+.phone p {
+    margin-top: .85em;;
+}
+
+.email {
+    display: flex;
+}
+
+.email a{
+    margin-top: .85em;
+    color: var(--bluish);
+    font-weight: 300;
+    transition: opacity 1s ease-in;
+}
+
+.email a:hover,
+.email a:focus {
+    opacity: .75;
+    font-weight: 700;
+}
+
+.social {
+
+}
+
+.social ul {
+    margin: 1em .25em;
+    text-align: center;
+}
+
+.social ul li {
+    display: inline-block;
+    width: 2.5rem;
+    padding: .5em;
+    transition: width 150ms ease-in-out;
+    opacity: .75; 
+}
+
+.social ul li:hover {
+    width: 3.5em; 
+    opacity: 1; 
+}
+
+.contact-form {
+
+}
+
+.contact-form .form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.25em;
+    margin-top: 1em;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: .75em;
+    margin-bottom: .5em;
+}
+
+.form-group textarea {
+    height: 6.3em;
+}
+
+.form-group .button {
+    display: block;
+    padding: .2em;
+    width: 100%;
+    font-size: 1.3em;
+}
+
+/*********************************************************
+    footer Section
+*********************************************************/
+footer {
+    background-color: var(--bluish);
+    color: var(--white);
+    padding: 2em;
 }

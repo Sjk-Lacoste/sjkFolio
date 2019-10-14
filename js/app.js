@@ -16,14 +16,14 @@ let time = setInterval(() => {
 }, 500);
 
 // Navigation
-window.addEventListener('scroll', function (e) {
-    var myNav = document.getElementById('navbar');
+// window.addEventListener('scroll', function (e) {
+//     var myNav = document.getElementById('navbar');
 
-    if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
-        myNav.classList.add("nav-coloured");
-        myNav.classList.remove("nav-transparent");
-    } else {
-        myNav.classList.add("nav-transparent");
-        myNav.classList.remove("nav-coloured");
-    }
-});
+//     if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
+//         myNav.classList.add("nav-coloured");
+//         myNav.classList.remove("nav-transparent");
+//     } else {
+//         myNav.classList.add("nav-transparent");
+//         myNav.classList.remove("nav-coloured");
+//     }
+// });

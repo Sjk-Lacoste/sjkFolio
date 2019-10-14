@@ -29,8 +29,15 @@ body {
 	line-height: 1;
 }
 
-*, *::before, *::after {
+*, 
+*::before, 
+*::after {
 	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 ol, ul {
@@ -47,7 +54,6 @@ q:before, q:after {
 	content: none;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+a {
+	text-decoration: none;
 }
