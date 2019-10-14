@@ -90,7 +90,7 @@ header .logo {
 
 nav li {
     display: inline-block;
-    margin: 1em .5em;
+    margin: 1em .05em;
 }
 
 nav a {
@@ -132,6 +132,12 @@ nav a:hover, nav a:focus {
     margin-bottom: 1em;
 }
 
+@media screen and (min-width: 60em) {
+    .home-hero .title {
+        margin: 3em;
+    }
+}
+
 /*********************************************************
     About Section
 *********************************************************/
@@ -141,12 +147,13 @@ nav a:hover, nav a:focus {
 
 .about-textbox {
     background-color: #232323;
-    padding: 4em;
-    width: 100vw;
-    margin-left: -2.5%;
+    padding: 3em;
+    padding-top: 4em;
+    width: 110%;
+    margin-left: -7.5%;
     color: var(--white);
     outline: 2px solid var(--primary-color);
-    outline-offset: -2.5em;
+    outline-offset: -2em;
     position: relative;
 }
 
@@ -155,8 +162,9 @@ nav a:hover, nav a:focus {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: .85em;
+    top: 1.1em;
     background: #232323;
+    font-size: 1.5em;
     padding: 0 .75em;
 }
 
@@ -207,11 +215,11 @@ nav a:hover, nav a:focus {
 }
 
 .skills .section-header {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
     padding: .5em;
     margin-bottom: .75em;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 900;
     border-bottom: 3px solid var(--primary-color);
 }
@@ -219,47 +227,70 @@ nav a:hover, nav a:focus {
 .skills-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-content: center;
 }
 
-.skills-wrapper .skills-item {
-    padding: 2em;
+.skills-item {
+    border-right: 2px solid var(--grey);
+    padding: .75em;
 }
 
-.skill {
-    margin-top: 2rem;
+.skills-item:last-of-type {
+    border-right: none;
 }
 
-.skill span {
-    margin-top: 2em;
-    padding: 1.75em;
-    font-size: 2.5em;
-    color: var(--primary-color);
-    opacity: .5;
+.skills-item .skill {
+    margin-bottom: 1.5em;
+}
+
+.skills-item .skill:last-of-type {
+    margin-bottom: 0;
+}
+
+.skills-item .skill img {
+    height: 5em;
+}
+
+.skills-item .skill span {
+    display: block;
+    padding-top: .75em;
 }
 
 /*********************************************************
     Projects Section
 *********************************************************/
 .portfolio {
-    padding: 4em 0;
+    padding: 3.5em 0;
     background-color: #232323;
     color: var(--white);
 }
 
 .portfolio .section-header {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
     padding: .5em;
     margin-bottom: .75em;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 900;
     border-bottom: 3px solid var(--primary-color);
 }
 
 .porfolio-items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
     width: 100%;
+}
+
+.porfolio-items .item {
+    box-sizing: border-box;
+}
+
+.porfolio-items .item img{
+    width: 100%;
+    height: 100%;
 }
 
 .porfolio-items .item {
@@ -270,6 +301,15 @@ nav a:hover, nav a:focus {
     box-sizing: border-box;
 }
 
+@media screen and (min-width: 60em) {
+    .porfolio-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+        width: 100%;
+    }
+}
+
 /*********************************************************
     Contact Section
 *********************************************************/
@@ -278,26 +318,18 @@ nav a:hover, nav a:focus {
 }
 
 .contact .section-header {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
-    padding: .5em;
+    padding: .25em;
     margin-bottom: .5em;
     font-size: 3em;
     font-weight: 900;
     border-bottom: 3px solid var(--primary-color);
+    text-align: center;
 }
 
 .contact .wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 1.5em;
-    padding: 2em 0;
-    text-align: left;
-    color: var(--bluish);
-}
-
-.contact .wrapper .contact-details {
-    border-right: 2px solid var(--grey);
 }
 
 .contact .wrapper .contact-details .details{
@@ -355,8 +387,8 @@ span.icon img {
 
 .social ul li {
     display: inline-block;
-    width: 2.5rem;
-    padding: .5em;
+    width: 2rem;
+    padding: .25em;
     transition: width 150ms ease-in-out;
     opacity: .75; 
 }
@@ -370,21 +402,22 @@ span.icon img {
 
 }
 
+.contact-form .contact-title {
+    margin: 1em .75em
+}
+
 .contact-form .form-group {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1.25em;
-    margin-top: 1em;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
     padding: .75em;
-    margin-bottom: .5em;
+    margin-bottom: 1.5em;
 }
 
 .form-group textarea {
-    height: 6.3em;
+    height: 7.3em;
 }
 
 .form-group .button {
@@ -392,6 +425,49 @@ span.icon img {
     padding: .2em;
     width: 100%;
     font-size: 1.3em;
+}
+
+.form-group .button:hover {
+    color: var(--primary-color);
+}
+
+@media screen and (min-width: 60em) {
+    .contact .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 1.5em;
+        padding: 2em 0;
+        text-align: left;
+        color: var(--bluish);
+    }
+
+    .contact .wrapper .contact-details {
+        border-right: 2px solid var(--grey);
+    }
+
+    .contact-form .form-group {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.25em;
+        margin-top: 1em;
+    }
+
+    .social ul {
+        margin: 1em .25em;
+        text-align: center;
+    }
+    
+    .social ul li {
+        display: inline-block;
+        width: 2.5rem;
+        padding: .5em;
+        transition: width 150ms ease-in-out;
+        opacity: .75; 
+    }
+    
+    .social ul li:hover {
+        width: 3.5em; 
+        opacity: 1; 
+    }
 }
 
 /*********************************************************
