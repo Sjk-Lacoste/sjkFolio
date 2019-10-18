@@ -17,7 +17,7 @@ let time = setInterval(() => {
 
 // Navigation
 // window.addEventListener('scroll', function (e) {
-//     var myNav = document.getElementById('navbar');
+//     var myNav = document.getElementById('home');
 
 //     if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
 //         myNav.classList.add("nav-coloured");
@@ -27,3 +27,9 @@ let time = setInterval(() => {
 //         myNav.classList.remove("nav-coloured");
 //     }
 // });
+
+// Auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}

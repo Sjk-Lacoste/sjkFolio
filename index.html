@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/app.css">
+    <script src="https://kit.fontawesome.com/e83344071f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,24 +39,22 @@
         </div>
     </section>
 
-    <div class="container">
-        <section class="about">
-            <div class="about-textbox" id="about">
-                    <h2 class="about-header">About Me</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam aliquam possimus doloremque deserunt saepe doloribus temporibus, quaerat eius cumque!
-                </p>
-    
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
-                </p>
+    <section class="about">
+        <div class="about-textbox" id="about">
+                <h2 class="about-header">About Me</h2>
+            <p>
+                I am a self-taught <strong>Web Developer</strong> with <strong>3 years</strong> experience.
+            </p>
 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
-                </p>
-            </div>
-        </section>
-    </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
+            </p>
+        </div>
+    </section>
 
     <section class="skills" id="skills">
         <h2 class="section-header">My Skills</h2>
@@ -141,7 +140,7 @@
                         <div id="address">
                             <address class="address">
                                 <span class="icon">
-                                    <img src="img/contact/address.png" alt="">
+                                    <i class="fa fa-map-marker"></i>
                                 </span> 
                                 <p>45 Jules Street, Jeppestown, 1234</p>
                             </address>
@@ -149,14 +148,15 @@
 
                         <div class="phone">
                             <span class="icon">
-                                <img src="img/contact/call.png" alt="">
+                                <!-- <img src="img/contact/call.png" alt=""> -->
+                                <i class="fas fa-phone"></i>
                             </span>
                             <p>+27(0) 79 231 2564</p>
                         </div>
 
                         <div class="email">
                             <span class="icon">
-                                <img src="img/contact/envelope.png" alt="">
+                                <i class="fas fa-envelope"></i>
                             </span> <a href="mailto:tmohlatlole@mail.com">tmohlatlole@gmail.com</a>
                         </div>
                     </div>
@@ -197,20 +197,40 @@
                 </div>
 
                 <div class="contact-form">
-                    <h2 class="contact-title">Hire Me</h2>
+                    <h2 class="contact-title">Get In Touch</h2>
 
                     <form>
                         <div class="form-group">
                             <div class="part1">
-                                <input type="text" class="input .effect-18" placeholder="Your Name..">
-                                <input type="email" class="input" placeholder="tmohlatlole@gmail.com">
-                                <input type="tel" class="input" placeholder="0712345678">
+                                <ul>
+                                    <li>
+                                        <label for="name">Name</label>
+                                        <input type="text" class="input" id="name" name="name" maxlength="100">
+                                        <span>Enter your full name here</span>
+                                    </li>
+                                    <li>
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="input" name="email" id="email" maxlength="100">
+                                        <span>Enter your email address here</span>
+                                    </li>
+                                    <li>
+                                        <label for="phone">Phone Numbers</label>
+                                        <input type="tel" class="input" name="phone" id="phone" maxlength="10">
+                                        <span>Enter your phone numbers here</span>
+                                    </li>
+                                </ul>
                             </div>
 
                             <div class="part2">
-                                <textarea id="message" placeholder="Type your message here.."></textarea>
+                                <ul>
+                                    <li>
+                                        <label for="message">Message</label>
+                                        <textarea name="message" id="message"></textarea>
+                                        <span>Type your message here</span>
+                                    </li>
+                                </ul>
 
-                                <button class="button button-submit">Hire Me</button>
+                                <button class="button button-submit">Contact Me</button>
                             </div>
                         </div>
                     </form>

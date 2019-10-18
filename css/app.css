@@ -52,7 +52,7 @@ h2 {
 }
 
 .section-header {
-    max-width: 40%;
+    max-width: 60%;
     margin: 0 auto;
     background-color: #232323;
     color: #d3d3d3;
@@ -77,11 +77,12 @@ h2 {
 .button-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
+    transition: background 250ms ease-out;
 }
 
 .button-primary:hover
 .button-primary:focus {
-    background: ;
+    /* background: ; */
     opacity: .75;
 }
 /*********************************************************
@@ -143,6 +144,10 @@ nav a:hover, nav a:focus {
     margin-bottom: 1em;
 }
 
+.title #my-name {
+    font-weight: 300;
+}
+
 @media screen and (min-width: 60em) {
     .home-hero .title {
         margin: 3em;
@@ -160,8 +165,7 @@ nav a:hover, nav a:focus {
     background-color: #232323;
     padding: 3em;
     padding-top: 4em;
-    width: 110%;
-    margin-left: -7.5%;
+    width: 100%;
     color: var(--white);
     outline: 2px solid var(--primary-color);
     outline-offset: -2em;
@@ -195,16 +199,15 @@ nav a:hover, nav a:focus {
     .about {
         background-image: url('../img/tshepo.jpg');
         background-repeat: no-repeat;
-        background-position: center;
-        margin-top: -.5em;
+        background-position: 80% 10%;
+
         margin-left: 5em;
-        margin-right: 5em;
+        margin-right: 3em;
     }
 
     .about-textbox {
         width: 45%;
         text-align: left;
-        top: -5em;
         box-shadow: 0 0 3em 0 rgba(0,0,0,.5);
         padding-top: 4.5em;
         -webkit-box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
@@ -234,7 +237,7 @@ nav a:hover, nav a:focus {
     text-align: center;
     padding: .5em;
     margin-bottom: .75em;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 900;
 }
 
@@ -272,6 +275,12 @@ nav a:hover, nav a:focus {
     padding-top: .75em;
 }
 
+@media screen and (min-width: 50em) {
+    .skills .section-header {
+        font-size: 2.5em;
+    }
+}
+
 /*********************************************************
     Projects Section
 *********************************************************/
@@ -286,7 +295,6 @@ nav a:hover, nav a:focus {
     margin: 0 auto;
     padding: .5em;
     margin-bottom: .75em;
-    font-size: 2em;
     font-weight: 900;
 }
 
@@ -315,6 +323,12 @@ nav a:hover, nav a:focus {
     max-height: 20em;
 }
 
+@media screen and (min-width: 50em) {
+    .portfolio .section-header {
+        font-size: 2.5em;
+    }
+}
+
 @media screen and (min-width: 60em) {
     .porfolio-items {
         display: grid;
@@ -334,9 +348,8 @@ nav a:hover, nav a:focus {
 .contact .section-header {
     width: 100%;
     margin: 0 auto;
-    padding: .25em;
+    padding: .45em;
     margin-bottom: .5em;
-    font-size: 3em;
     font-weight: 900;
     text-align: center;
 }
@@ -357,27 +370,47 @@ span.icon img {
 .address {
     display: inline-flex;
     vertical-align: middle;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+#address .icon {
+    width: 1.5em;
+    font-size: 1.5em;
 }
 
 .address p {
-    margin-top: .85em;
+    text-align: left;
+    font-weight: 700;
 }
 
 .phone {
     display: flex;
-    vertical-align: center;
+    vertical-align: middle;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.phone .icon {
+    width: 1.5em;
+    font-size: 1.3em;
 }
 
 .phone p {
-    margin-top: .85em;;
+    font-weight: 700;
 }
 
 .email {
     display: flex;
+    text-align: left;
+}
+
+.email .icon {
+    width: 1.5em;
+    font-size: 1.2rem;
 }
 
 .email a{
-    margin-top: .85em;
     color: var(--bluish);
     font-weight: 300;
     transition: opacity 1s ease-in;
@@ -389,9 +422,7 @@ span.icon img {
     font-weight: 700;
 }
 
-.social {
-
-}
+/* .social {} */
 
 .social ul {
     margin: 1em .25em;
@@ -407,27 +438,101 @@ span.icon img {
 }
 
 .social ul li:hover {
-    width: 3.5em; 
+    width: 2.5em; 
     opacity: 1; 
 }
 
-.contact-form {
-
-}
+/* CONTACT FORM */
+/* .contact-form {} */
 
 .contact-form .contact-title {
-    margin: 1em .75em
+    margin: 0em .75em;
+    margin-bottom: 1.2em;
 }
 
 .contact-form .form-group {
     display: grid;
 }
 
-.form-group input, .form-group textarea {
+.form-group  .part1 li,
+.form-group .part2 li {
+    display: block;
+    border: 1px solid #919191;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+
+.form-group  .part1 li > label,
+.form-group .part2 li > label{
+    display: block;
+    float: left;
+    margin-top: -.75em;
+    margin-bottom: 1em;
+    margin-left: .75em;
+    background: #d3d3d3;
+    padding: 2px 5px;
+    color: #919191;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+    padding: .25em;
+    color: #919191;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus
+{
+}
+.form-group li > span{
+	background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    font-size: .75em;
+    text-align: center;
+    color: #aaaaaa;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.form-group textarea{
+	resize:none;
+}
+
+.button-submit {
+    height: 2.7em;
+    border-radius: 3px;
+    transition: opacity 250ms ease-out;
+}
+
+.button-submit:hover,
+.button-submit:focus {
+    color: var(--bluish) !important;
+    opacity: .5;
+}
+
+/* .form-group input, .form-group textarea {
     width: 100%;
     padding: .75em;
     margin-bottom: 1.5em;
-}
+} */
 
 .form-group textarea {
     height: 7.3em;
@@ -442,6 +547,12 @@ span.icon img {
 
 .form-group .button:hover {
     color: var(--primary-color);
+}
+
+@media screen and (min-width: 50em) {
+    .contact .section-header {
+        font-size: 2.5em;
+    }
 }
 
 @media screen and (min-width: 60em) {
