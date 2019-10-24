@@ -5,15 +5,18 @@
 :root {
     --white: #fff;
     --primary-color: #ffd000;
-    --bluish: #01020a;
+    --bluish: #38618C;
+    --font-color: #0B121A;
     --grey: #9b9b9b;
+    --grey-1: #d3d3d3;
+    --body-bg: #061824;
     --overlay-color: rgba(24,39,51,0.85);
     --bg-transparent: rgba(250,250,250,.008);
     --transparent: transparent;
 }
 
 body {
-    background-color: #d3d3d3;
+    background-color: #333;
     font-family: 'Railway', sans-serif;
     text-align: center;
 }
@@ -35,15 +38,17 @@ body {
 *********************************************************/
 .title {
     font-size: 2.5rem;
-    font-weight: 900;
     line-height: 1.5em;
     margin-top: 1em;
 }
 
 .title .directory {
-    font-weight: 300;
     display: block;
-    font-size: .9em;
+    font-size: .5em;
+}
+
+.title #my-name {
+    font-weight: 900;
 }
 
 h2 {
@@ -56,11 +61,11 @@ h2 {
     margin: 0 auto;
     background-color: #232323;
     color: #d3d3d3;
-    outline: 2px dashed var(--grey);
+    outline: 2px solid var(--grey);
     outline-offset: -.3em;
-    -webkit-box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
-    -moz-box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
-    box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
+    -webkit-box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5);
+    -moz-box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5);
+    box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5);
 }
 /*********************************************************
     buttons
@@ -89,32 +94,69 @@ h2 {
     Header
 *********************************************************/
 header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-top: 1em;
+    position: relative;
     z-index: 5;
 }
 
-header .logo {
-    height: 5em;
+.logo {
+    position: fixed;
+    top: 1.5rem;
+    left: 2rem;
+    height: 3.5rem;
 }
 
-nav li {
-    display: inline-block;
-    margin: 1em .05em;
+/* The sidepanel menu */
+.sidepanel {
+    height: 250px; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; /* Stay on top */
+    top: 5rem;
+    right: 2rem;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    text-align: left;
+}
+  
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
 
-nav a {
-    font-weight: 900;
-    font-size: .8rem;
-    text-transform: uppercase;
-    padding: .75em;
-    color: var(--white);
+.sidepanel a:hover {
+    color: #f1f1f1;
 }
 
-nav a:hover, nav a:focus {
-    color: var(--primary-color);
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--font-color);
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+    transition: opacity 250ms ease-in;
+}
+  
+.openbtn:hover {
+    opacity: .75;
 }
 
 /*********************************************************
@@ -144,10 +186,6 @@ nav a:hover, nav a:focus {
     margin-bottom: 1em;
 }
 
-.title #my-name {
-    font-weight: 300;
-}
-
 @media screen and (min-width: 60em) {
     .home-hero .title {
         margin: 3em;
@@ -158,27 +196,29 @@ nav a:hover, nav a:focus {
     About Section
 *********************************************************/
 .about {
-     
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2em 0;
 }
 
 .about-textbox {
-    background-color: #232323;
+    background-color: var(--white);
     padding: 3em;
     padding-top: 4em;
     width: 100%;
-    color: var(--white);
-    outline: 2px solid var(--primary-color);
-    outline-offset: -2em;
+    color: var(--font-color);
+    /* outline: 2px solid var(--primary-color);
+    outline-offset: -2em; */
     position: relative;
 }
 
 .about-textbox .about-header {
-    color: var(--primary-color);
+    color: var(--font-color);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 1.1em;
-    background: #232323;
+    background: var(--white);
     font-size: 1.5em;
     padding: 0 .75em;
 }
@@ -192,27 +232,22 @@ nav a:hover, nav a:focus {
 }
 
 @media screen and (min-width: 60em) {
+    .about {
+        grid-template-columns: 2fr 1fr;
+    }
+    
     .about-header {
         font-size: 2rem;
     }
 
-    .about {
-        background-image: url('../img/tshepo.jpg');
-        background-repeat: no-repeat;
-        background-position: 80% 10%;
-
-        margin-left: 5em;
-        margin-right: 3em;
+    .about-textbox {
+        width: 100%;
+        text-align: left;
+        padding-top: 4.5em;
     }
 
-    .about-textbox {
-        width: 45%;
-        text-align: left;
-        box-shadow: 0 0 3em 0 rgba(0,0,0,.5);
-        padding-top: 4.5em;
-        -webkit-box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
-        -moz-box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
-        box-shadow: 10px 10px 23px -4px rgba(247, 247, 247, 0.5);
+    .my-image img{
+        height: 100%;
     }
 
     .about-textbox .about-header {
@@ -228,8 +263,9 @@ nav a:hover, nav a:focus {
 *********************************************************/
 .skills {
     display: block;
+    height: auto;
     padding: 3em;
-    color: #232323;
+    color: var(--white);
 }
 
 .skills .section-header {
@@ -264,6 +300,11 @@ nav a:hover, nav a:focus {
 
 .skills-item .skill:last-of-type {
     margin-bottom: 0;
+}
+
+.skills-item .fab, 
+.skills-item .fas {
+    font-size: 5rem;
 }
 
 .skills-item .skill img {
@@ -342,6 +383,7 @@ nav a:hover, nav a:focus {
     Contact Section
 *********************************************************/
 .contact {
+    background: var(--grey-1);
     padding: 3em;
 }
 
@@ -362,9 +404,12 @@ nav a:hover, nav a:focus {
     margin-top: 1em;
 }
 
-span.icon img {
+.details i {
+    color: var(--font-color);
     width: 2.5em;
-    padding: .5em;
+    padding: 0;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .address {
@@ -372,32 +417,13 @@ span.icon img {
     vertical-align: middle;
     text-align: left;
     margin-bottom: 1em;
-}
-
-#address .icon {
-    width: 1.5em;
-    font-size: 1.5em;
+    padding: 0;
 }
 
 .address p {
     text-align: left;
     font-weight: 700;
-}
-
-.phone {
-    display: flex;
-    vertical-align: middle;
-    text-align: left;
-    margin-bottom: 1em;
-}
-
-.phone .icon {
-    width: 1.5em;
-    font-size: 1.3em;
-}
-
-.phone p {
-    font-weight: 700;
+    color: var(--font-color);
 }
 
 .email {
@@ -425,21 +451,27 @@ span.icon img {
 /* .social {} */
 
 .social ul {
-    margin: 1em .25em;
+    margin: 2.5em .25em;
     text-align: center;
 }
 
 .social ul li {
     display: inline-block;
     width: 2rem;
-    padding: .25em;
-    transition: width 150ms ease-in-out;
+    padding: 0 !important;
+    font-size: 1.5em;
+    transition: transform 150ms ease-in-out;
     opacity: .75; 
 }
 
 .social ul li:hover {
-    width: 2.5em; 
+    transform: scale(1.3,1.5); 
     opacity: 1; 
+}
+
+.social ul li a {
+    color: var(--font-color);
+    font-size: 1.5em;
 }
 
 /* CONTACT FORM */

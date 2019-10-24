@@ -10,21 +10,24 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="https://kit.fontawesome.com/e83344071f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
 
 <body>
     <header id="home">
-        <img src="img/logo.png" alt="sjkFolio" class="logo">
-        
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo">
+            <img src="img/logo.png" alt="sjkFolio" class="logo">
+        </div>
+
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+          
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
     </header>
 
     <section class="home-hero">
@@ -39,22 +42,27 @@
         </div>
     </section>
 
-    <section class="about">
-        <div class="about-textbox" id="about">
-                <h2 class="about-header">About Me</h2>
-            <p>
-                I am a self-taught <strong>Web Developer</strong> with <strong>3 years</strong> experience.
-            </p>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
-            </p>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
-            </p>
-        </div>
-    </section>
+    <div class="container">
+        <section class="about">
+            <div class="about-textbox" id="about">
+                    <h2 class="about-header">About Me</h2>
+                <p>
+                    I am a self-taught <strong>Web Developer</strong> with <strong>3 years</strong> experience.
+                </p>
+    
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
+                </p>
+    
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea ipsam mollitia minima delectus praesentium nulla nemo impedit iste facilis placeat, nesciunt odit expedita reiciendis aperiam maxime quos animi consequatur?
+                </p>
+            </div>
+            <div class="my-image">
+                <img src="img/tshepo.jpg" alt="Tshepo Mohlatlole">
+            </div>
+        </section>
+    </div>
 
     <section class="skills" id="skills">
         <h2 class="section-header">My Skills</h2>
@@ -63,33 +71,33 @@
             <div class="skills-wrapper">
                 <div class="skills-item">
                     <div class="skill">
-                        <img src="img/skills/html5.svg" alt="HTML5">
+                        <i class="fab fa-html5"></i>
                         <span>HTML5</span>
                     </div>
                     <div class="skill">
-                        <img src="img/skills/css.svg" alt="CSS">
+                        <i class="fab fa-css3-alt"></i>
                         <span>CSS3</span>
                     </div>
                 </div>
 
                 <div class="skills-item">
                     <div class="skill">
-                        <img src="img/skills/javascript.svg" alt="JavaScript">
+                        <i class="fab fa-js"></i>
                         <span>JavaScript</span>
                     </div>
                     <div class="skill">
-                        <img src="img/skills/mysql.svg" alt="MySql">
+                        <i class="fas fa-database"></i>
                         <span>MySql</span>
                     </div>
                 </div>
 
                 <div class="skills-item">
                     <div class="skill">
-                        <img src="img/skills/php.svg" alt="PHP">
+                        <i class="fab fa-php"></i>
                         <span>PHP</span>
                     </div>
                     <div class="skill">
-                        <img src="img/skills/python.svg" alt="Python">
+                        <i class="fab fa-python"></i>
                         <span>Python</span>
                     </div>
                 </div>
@@ -139,25 +147,21 @@
                     <div class="details">
                         <div id="address">
                             <address class="address">
-                                <span class="icon">
-                                    <i class="fa fa-map-marker"></i>
-                                </span> 
-                                <p>45 Jules Street, Jeppestown, 1234</p>
+                                <i class="fa fa-map-marker"></i>
+                                <p>Johannesburg, South Africa</p>
                             </address>
                         </div>
 
-                        <div class="phone">
-                            <span class="icon">
-                                <!-- <img src="img/contact/call.png" alt=""> -->
+                        <!-- <div class="phone">
+                            <span class="icon">->
                                 <i class="fas fa-phone"></i>
                             </span>
                             <p>+27(0) 79 231 2564</p>
-                        </div>
+                        </div> -->
 
                         <div class="email">
-                            <span class="icon">
-                                <i class="fas fa-envelope"></i>
-                            </span> <a href="mailto:tmohlatlole@mail.com">tmohlatlole@gmail.com</a>
+                            <i class="fas fa-envelope"></i> 
+                            <a href="mailto:tmohlatlole@mail.com">tmohlatlole@gmail.com</a>
                         </div>
                     </div>
 
@@ -165,31 +169,13 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="img/social/linkedin.png" alt="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="#">
-                                    <img src="img/social/instagram.png" alt="Instagram">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="img/social/twitter.png" alt="Twitter">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://api.whatsapp.com/send?phone=27792312564&text=Hello%20Tshepo%20I%20am%20contacting%20you%20from%20your%20website.">
-                                    <img src="img/social/whatsapp.png" alt="Whatsapp">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <img src="img/social/github-logo.png" alt="LinkedIn">
+                                    <i class="fab fa-github-square"></i>
                                 </a>
                             </li>
                         </ul>
