@@ -4,6 +4,7 @@
 
 :root {
     --white: #fff;
+    --white-overlay: rgba(255, 255, 255, 0.85);
     --primary-color: #ffd000;
     --bluish: #38618C;
     --font-color: #0B121A;
@@ -61,13 +62,7 @@ h2 {
     position: relative;
     max-width: 60%;
     margin: 0 auto;
-    /* background-color: #232323; */
     color: #d3d3d3;
-    /* outline: 2px solid var(--grey);
-    outline-offset: -.3em;
-    -webkit-box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5);
-    -moz-box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5);
-    box-shadow: 2px 2px 5px -4px rgba(247, 247, 247, 0.5); */
 }
 
 .section-header:after {
@@ -170,16 +165,21 @@ header {
     right: 2rem;
     font-size: 1.5rem;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: var(--white-overlay);
     color: var(--font-color);
     padding: 5px 10px;
+    box-shadow: 1px 1px 5px var(--font-color);
     border-radius: 3px;
-    border: none;
+    border: 0;
     transition: opacity 250ms ease-in;
 }
   
 .openbtn:hover {
     opacity: .75;
+}
+
+.openbtn:active {
+    border: none;
 }
 
 /*********************************************************
@@ -299,7 +299,7 @@ header {
 .skills {
     display: block;
     height: auto;
-    padding: 3em;
+    padding: 1.5em 3em;
     color: var(--white);
 }
 
